@@ -7,6 +7,9 @@ const postsRouter = require('./routes/posts.router');
 
 const app = express();
 
+app.use('/static', express.static('public')); // 정적 파일을 제공하는 미들웨어
+
+
 app.use(express.json()); // body-parser 미들웨어를 사용하여 req.body를 사용할 수 있게 함
 app.use((req, res, next) => {
     const start = Date.now();
